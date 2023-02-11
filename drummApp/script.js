@@ -1,8 +1,8 @@
-// var width = window.innerWidth;
-// var height = window.innerHeight;
+var width = window.innerWidth;
+var height = window.innerHeight;
 
-// console.log("Window width: " + width + " pixels");
-// console.log("Window height: " + height + " pixels");
+console.log("Window width: " + width + " pixels");
+console.log("Window height: " + height + " pixels")
 
 
 //creat a function to the document that will revel what key is being presed
@@ -63,6 +63,8 @@ document.addEventListener("keydown", function(event){
     }
 })
 
+
+
 //mesmo principio do de cima porém utilizando funções
 composicao('a', key_a)
 composicao('s', key_s)
@@ -96,14 +98,68 @@ function playSomething(musicalNote){
 
 //aumenta o botão
 function expandIt(something){
-    something.style.transform = `scale(1.14)`
+    // something.style.transform = `scale(1.14)`
+    something.style.scale = '1.14'
 }
 
 //diminui o botão
 function shirinkIt(something){
-    something.style.transform = 'scale(1)'
+    something.style.scale = '1'
 }
 
 function borderIt(something){
     something.style.boxShadow = 's'
 }
+
+
+function clickSoundIt(someSound){
+    playSomething(someSound)
+}
+
+
+//mobile
+key_a.addEventListener('click', function(event){
+    allMobile('sounds/clap.wav', key_a)
+})
+
+key_s.addEventListener('click', function(event){
+    allMobile('sounds/hihat.wav', key_s)
+})
+
+key_d.addEventListener('click', function(event){
+    allMobile('sounds/kick.wav', key_d)
+})
+
+key_f.addEventListener('click', function(event){
+    allMobile('sounds/openhat.wav', key_f)
+})
+
+key_g.addEventListener('click', function(event){
+    allMobile('sounds/boom.wav', key_g)
+})
+
+key_h.addEventListener('click', function(event){
+    allMobile('sounds/ride.wav', key_h)
+})
+
+key_j.addEventListener('click', function(event){
+    allMobile('sounds/snare.wav', key_j)
+})
+
+key_k.addEventListener('click', function(event){
+    allMobile('sounds/tom.wav', key_k)
+})
+
+key_l.addEventListener('click', function(event){
+    allMobile('sounds/tink.wav', key_l)
+})
+function allMobile(sound, key_key){
+    clickSoundIt(sound)
+    expandIt(key_key)
+    key_key.classList.add('shadowed')
+    borderIt(key_key)
+
+    setTimeout(function(){
+        shirinkIt(key_key)
+        key_key.classList.remove('shadowed')
+}, 100)}

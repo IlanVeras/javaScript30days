@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body{
+    background-color: black;
+}
+
+body{
+    overflow: hidden;
+}
+
+.display{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    background-image: none;
+    grid-template-areas: "clap hihat kick"
+                         "openhart boom ride"
+                         "snare tom tink";
+    grid-gap: 19px;
+}
+
+
+.letter{
+    display: none;
+}
+.key{
+    font-family: 'Share Tech Mono', 'sans-serif';
+    display: flex;
+    text-transform: uppercase;
+    font-size: x-large;
+    /* Este flex-direction faz com que 'cc' fique abaixo de 'letter' */
+    width: 140px;
+    height: 204px;
+    padding: 10px;
+    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    /* transform: translate(-50%); */
+    background-color: transparent;
+    border: 2px solid white;
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px ;
+    border-radius: 5px;
+}
+
+#ka{
+    grid-area: clap;
+}
+#ks{
+    grid-area: hihat;
+}
+#kd{
+    grid-area: kick;
+}
+#kf{
+    grid-area: openhart;
+}
+#kg{
+    grid-area: boom;
+}
+#kh{
+    grid-area: ride;
+}
+#kj{
+    grid-area: snare;
+}
+#kk{
+    grid-area: tom;
+}
+#kl{
+    grid-area: tink;
+}
+
+.shadowed{
+    box-shadow: 0px 0px 9px yellow;
+}
