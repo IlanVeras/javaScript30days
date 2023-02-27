@@ -41,6 +41,7 @@ body{
     inset 0 0 0 3px #EFEFEF,
     inset 0 0 10px black,
     0 0 10px rgba(0,0,0,0.2);
+    transform: rotate(90deg);
 }
 
 /* .clock-face{
@@ -53,7 +54,7 @@ body{
 .clock-face{
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 255, 115, 0.534);
+    /* background-color: rgba(0, 255, 115, 0.534); */ 
 }
 
 /* .hand{
@@ -70,12 +71,12 @@ body{
 
 .hand{
     width: 50%;
-    height: 6px;
+    height: 3px;
     background-color: black;
     position: absolute;
     top: 50%;
     transform-origin: 100%; /*coloca .hand com origem central*/
-        transform: rotate(90deg); /*rotaciona 90 graus*/
+        /*transform: rotate(90deg); /*rotaciona 90 graus*/
         transition: all 0.05; /*transicina devagar*/
         transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /*Faz ele voltar um pouco toda vez que vai para frente*/
 }
