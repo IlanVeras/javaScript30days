@@ -9,7 +9,9 @@ function relogio(){
     const d = new Date()
     //Do jeito abaixo podemos mostrar as horas como nos EUA
     // let hour = d.getHours() % 12 || 12
-    let hour = d.getHours()
+    //unidadeDeTempo * graus
+    //apesar de termos contado em formato de rológio 24 horas o correto é conrtarmos como 12 horas, portanto a divisão de hora por grau será 360/12 = 30 NÃO 360/24 = 12
+    let hour = d.getHours() % 12 || 12
     let minutes = d.getMinutes()
     let secondes = d.getSeconds()
 
@@ -17,11 +19,15 @@ function relogio(){
     //Para saber quantos graus algo deve rodar basta seguir a fómula
         //360/unidadeDeTempo = graus
         //depois: unidadeDeTempo * graus
+
+    grausHora = (360 / 12) * hour
+    grausMinutos = (360 / 60) * minutes
+    grausSegundos = (360 / 60) * secondes
+
     
-    let hDeg = hour * 30 //unidadeDeTempo * graus
-    //apesar de termos contado em formato de rológio 24 horas o correto é conrtarmos como 12 horas, portanto a divisão de hora por grau será 360/12 = 30 NÃO 360/24 = 12
-    let mDeg = minutes * 6
-    let sDeg = secondes * 6
+    let hDeg = grausHora 
+    let mDeg = grausMinutos
+    let sDeg = grausSegundos
 
 
     //console.log(`${hour}:${minutes}:${secondes}`)
@@ -33,5 +39,4 @@ function relogio(){
 }
 
 relogio()
-var interval;
-interval = setInterval(relogio, 1000)
+setInterval(relogio, 1000)

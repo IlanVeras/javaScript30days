@@ -1,0 +1,57 @@
+:root{
+    --var-blur: rgba(0, 0, 0, 0);
+    --var-trans: 0%;
+    --var-topReference: 40%
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    color: white;
+    background-color: black;
+}
+
+.slidebar{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.separator{
+    width: 5px;
+    height: 15px;
+    background-color: white;
+}
+
+
+.container{
+    width: 300px;
+    padding: 1rem;
+    background-color: orange;
+    position: absolute;
+    top: var(--var-topReference);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img{
+    width: 300px;
+    transform: translateY(var(--var-trans));
+}
+
+.coverIt{
+    width: 300px;
+    height: 380px;
+    background-color: var(--var-blur);
+    position: absolute;
+    top: var(--var-topReference);
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+
+  

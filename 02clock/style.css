@@ -78,9 +78,6 @@ body{
     transform-origin: 100%; /*coloca .hand com origem central*/
         /*transform: rotate(90deg); /*rotaciona 90 graus*/
         transition: all 0.05; /*transicina devagar*/
-        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /*Faz ele voltar um pouco toda vez que vai para frente*/
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1) /*Faz ele voltar um pouco toda vez que vai para frente*/
 }
 
-.btn{
-    position: absolute;
-}
