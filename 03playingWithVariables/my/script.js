@@ -19,4 +19,3 @@ slider1.addEventListener('input', showIt)
 slider2.addEventListener('input', moveIt)
 
 console.log(cover)
-
