@@ -38,7 +38,7 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-
+    console.log("Filter the list of inventors for those who were born in the 1500's")
     function checkYear(arr){
         if(arr.year >= 1500 && arr.year < 1600){
             return arr
@@ -46,23 +46,28 @@
     }
 
     let result1500 = inventors.filter(checkYear)
-    console.log(result1500)
+    console.table(result1500)
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-
+    console.log("Give us an array of the inventors first and last names")
     function nameSurname(arr){
         return `${arr.first} ${arr.last}`
     }
 
     let resulNames = inventors.map(nameSurname)
-    console.log(resulNames)
+    console.table(resulNames)
 
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-    console.log(inventors.sort((a, b) => a.year - b.year))
-
+    console.log("Sort the inventors by birthdate, oldest to youngest")
+    function yl(arr){
+      arr.age = Number(arr.passed - arr.year)
+      return arr
+    }
+    //console.table(inventors.sort((a, b) => a.year - b.year))
+    console.table(inventors.map(yearsLived).sort((a, b) => b.age - a.age))
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
@@ -72,13 +77,19 @@
 
     console.log(inventors.reduce(sumOfAges, 0))
     // 5. Sort the inventors by years lived
-
+    console.log("Sort the inventors by years lived")
     function yearsLived(arr){ 
         arr.age = Number(arr.passed - arr.year)
         return arr
     }
-    console.log(inventors.map(yearsLived))
-    console.log(inventors.sort((a, b) => a.age - b.age))
+
+    //console.table(inventors.map(yearsLived).sort((a, b) => a.age - b.age))
+    console.table(inventors.sort((a, b) => {
+      const lastGuy = a.passed - a.year
+      const nextGuy = b.passed - b.year
+      return lastGuy > nextGuy ? -1 : 1
+    }))
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
