@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Panels 💪</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Hey</p>
+      <p>Let's</p>
+      <p>Dance</p>
+    </div>
+    <div class="panel panel2">
+      <p>Give</p>
+      <p>Take</p>
+      <p>Receive</p>
+    </div>
+    <div class="panel panel3">
+      <p>Experience</p>
+      <p>It</p>
+      <p>Today</p>
+    </div>
+    <div class="panel panel4">
+      <p>Give</p>
+      <p>All</p>
+      <p>You can</p>
+    </div>
+    <div class="panel panel5">
+      <p>Life</p>
+      <p>In</p>
+      <p>Motion</p>
+    </div>
+  </div>
+
+  <script>
+    //Primeiro eu crio um array de controle
+    let arrControl = []
+    //depois adciono um evento de clique para cada elemento .panel
+    document.querySelectorAll(".panel").forEach(e => {
+      e.addEventListener("click", function(e){
+        //assim que o elemento for clicado ele fará parte do array de controle
+        arrControl.push(this)
+        if(arrControl.length > 0){
+          //tendo mais que 0 elementos no array já adicionamos as classes .open e .open .active para o elemento de índice 0
+          arrControl[0].classList.add("open")
+          arrControl[0].classList.add("open-active")
+          if(arrControl.length > 1){
+            //tendo mai sque 1 elementos primeiro vamos adcionar as classes .open e .open-active, que antes estavam no elemento de índice 0 para o índice 1
+            arrControl[1].classList.add("open")
+            arrControl[1].classList.add("open-active")
+            //removemos por fim as classes .open e .open-active do elemento de índice 0
+            arrControl[0].classList.remove("open")
+            arrControl[0].classList.remove("open-active")
+            arrControl.splice(0, 1)
+          }
+        }
+      })
+    })
+
+  </script>
+
+
+
+</body>
+</html>
