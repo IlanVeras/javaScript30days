@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <link rel="icon" href="https://fav.farm/✅" />
+</head>
+    <body>
+        <!-- DEFININDO O CANVAS -->
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+        //pegando o canvas no js
+        const canvas = document.querySelector('#draw');
+        //definindo o contexto
+        const ctx = canvas.getContext('2d');
+        //definindo a largura
+        canvas.width = window.innerWidth;
+        //defindo a altura
+        canvas.height = window.innerHeight;
+        //definindo a cor
+        ctx.strokeStyle = '#BADA55';
+        //definindo o estilo da linha comom redondo
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+        //variável que permitirá saber se podemos ou não desenhar algo
+        let isDrawing = false
+
+        //função de desenhar
+        function draw(e) {
+            if (!isDrawing) return; 
+            console.log(e);
+        }
+        
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mousedown', () => isDrawing = true)
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+    </script>
+
+    <style>
+        html, body {
+            margin: 0;
+        }
+        canvas{
+            background-color: red;
+        }
+    </style>
+
+    </body>
+</html>
