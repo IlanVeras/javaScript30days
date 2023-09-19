@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tributes</title>
+</head>
+<body>
+    <%if(tributes[0]){%>
+        <h1>District <%=tributes[0].district%></h1>
+        <%for(let i=0; i < tributes.length; i++){%>
+            <%if(tributes[i].winner == true){%>
+                <h3>Winner</h3>
+                <div>
+                    <h2><%=tributes[i].nameTribute%></h2>
+                </div>
+            <%}%>
+        <%}%>
+        
+        <%for(let i=0; i < tributes.length; i++){%>
+            <div>
+                <h2><%=tributes[i].nameTribute%></h2>
+            </div>
+        <%}%>
+    <%}else{%>
+        <p><%="Identification for Tributes Not Found; Please Review and Resubmit"%></p>
+    <%}%>
+</body>
+</html>

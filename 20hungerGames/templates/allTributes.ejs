@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tributes</title>
+</head>
+<body>
+    <%for(let i=0; i < tributes.length; i++){%>
+        <div id="<%=tributes[i]._id%>">
+            <form action="/<%=tributes[i]._id%>?_method=DELETE" method="POST">
+                <div>
+                    <h2><%=tributes[i].nameTribute%></h2>
+                </div>
+                <p>District <%=tributes[i].district%></p>
+                <p>Edition: <%=tributes[i].edition%></p>
+                <a href="/edit/<%=tributes[i]._id%>">Edit</a>
+                <a href="/del/<%=tributes[i]._id%>">Del</a>
+            </form>
+        </div>
+    <%}%>
+</body>
+</html>
